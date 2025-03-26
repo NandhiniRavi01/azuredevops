@@ -7,7 +7,7 @@ pipeline {
             steps {
                 script {
                     sh '''
-                    /bin/bash -c "python -m venv venv && source venv/bin/activate"
+                    /bin/bash -c "python3 -m venv venv && source venv/bin/activate"
                     '''
                 }
             }
