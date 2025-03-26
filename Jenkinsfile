@@ -59,6 +59,7 @@ pipeline {
             steps {
                 script {
                     sh '''
+                    az account set --subscription c44007ce-0884-475d-8661-b6c607629ec4
                     /bin/bash -c "source venv/bin/activate && az functionapp deployment source config-zip \
                         --resource-group learn-88f7a7b8-bde7-4992-8916-a4028634615f \
                         --name myAzureFunctionApp2 \
