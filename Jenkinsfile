@@ -7,13 +7,14 @@ pipeline {
     }
 
     stages {
-       stage('Azure Login') {
+     stage('Azure Login') {
     steps {
         script {
-            sh 'az login --use-device-code'
+            sh 'az login --use-device-code --allow-no-subscriptions'
         }
     }
 }
+
         stage('Verify Azure Account') {
     steps {
         script {
