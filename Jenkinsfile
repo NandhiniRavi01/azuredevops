@@ -1,7 +1,17 @@
 pipeline {
     agent any
+     environment {
+       
+        AZURE_RESOURCE_GROUP = "learn-88f7a7b8-bde7-4992-8916-a4028634615f"
+        AZURE_FUNCTION_APP = "myAzureFunctionApp2"
+    }
 
     stages {
+        stage('Check Azure Login') {
+            steps {
+                sh 'az account show'
+            }
+        }
 
         stage('Setup Python Virtual Environment') {
             steps {
