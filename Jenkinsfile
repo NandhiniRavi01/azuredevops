@@ -7,11 +7,22 @@ pipeline {
     }
 
     stages {
-        stage('Check Azure Login') {
-            steps {
-                sh 'az account show'
-            }
+       stage('Azure Login') {
+    steps {
+        script {
+            sh 'az login --use-device-code'
         }
+    }
+}
+        stage('Verify Azure Account') {
+    steps {
+        script {
+            sh 'az account show'
+        }
+    }
+}
+
+
 
         stage('Setup Python Virtual Environment') {
             steps {
